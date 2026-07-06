@@ -173,7 +173,7 @@ a {
   align-items: center;
   background:
     linear-gradient(90deg, rgba(8, 37, 27, 0.94), rgba(8, 37, 27, 0.76) 44%, rgba(8, 37, 27, 0.3)),
-    url("assets/masjid-hero.png") center / cover no-repeat;
+    url("pictures/masjid-hero.png") center / cover no-repeat;
   color: var(--white);
 }
 
@@ -832,7 +832,7 @@ p {
 .page-hero {
   background:
     linear-gradient(90deg, rgba(8, 37, 27, 0.96), rgba(13, 53, 39, 0.88)),
-    url("assets/masjid-hero.png") center / cover no-repeat;
+    url("pictures/masjid-hero.png") center / cover no-repeat;
   color: var(--white);
 }
 
@@ -1143,3 +1143,5 @@ p {
     height: 320px;
   }
 }
+
+

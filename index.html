@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kent County Islamic Center - Masjid Aisha</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="assets/kcic-logo.jpg" alt="Kent County Islamic Center Masjid Aisha logo">
+        <span class="brand-text"><strong>Kent County Islamic Center</strong><span>Masjid Aisha</span></span>
+      </a>
+      <input class="nav-toggle" id="nav-toggle" type="checkbox">
+      <label class="menu-button" for="nav-toggle" aria-label="Open navigation"><span></span></label>
+      <nav class="main-nav">
+        <a class="active" href="index.html">Home</a>
+        <a href="prayer-times.html">Prayer Times</a>
+        <a href="visit.html">Visit</a>
+        <a href="programs.html">Programs</a>
+        <a href="leadership.html">Leadership</a>
+        <a class="donate-link" href="donate.html">Donate</a>
+        <a href="events.html">Events</a>
+        <a href="ramadan-eid.html">Ramadan & Eid</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">Warwick, Rhode Island</span>
+          <h1>Kent County Islamic Center - Masjid Aisha</h1>
+          <p>A welcoming place for worship, education, spiritual growth, and community connection in Warwick and the surrounding areas.</p>
+          <div class="actions">
+            <a class="button primary" href="prayer-times.html">View Prayer Times</a>
+            <a class="button secondary" href="donate.html">Support the Masjid</a>
+          </div>
+        </div>
+        <div class="home-prayer-card hero-prayer-card card accent">
+          <div class="home-prayer-heading">
+            <div>
+              <span class="eyebrow">Today</span>
+              <h2 id="home-prayer-title">Daily Prayer Times</h2>
+              <p id="home-prayer-status">Loading today's prayer schedule...</p>
+            </div>
+            <a class="button primary" href="prayer-times.html">Full Prayer Page</a>
+          </div>
+          <div id="home-prayer-rows" class="home-prayer-rows" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-strip">
+      <div class="quick-grid">
+        <div class="quick-item"><span>Jumu'ah</span><strong>Friday at 1:00 PM</strong></div>
+        <div class="quick-item"><span>Address</span><strong>430 Buttonwoods Ave, Warwick, RI</strong></div>
+        <div class="quick-item"><span>Entrances</span><strong>Door 430 Women, Door 432 Men</strong></div>
+      </div>
+    </section>
+
+    <section class="section home-overview-section">
+      <div class="section-header">
+        <span class="eyebrow">Our Mission</span>
+        <h2>Serving families with faith, learning, and community.</h2>
+        <p>Masjid Aisha serves the Muslim community of Warwick and the surrounding areas by providing a welcoming place of worship, education, spiritual growth, and community engagement.</p>
+      </div>
+      <div class="grid">
+        <article class="card accent">
+          <h3>Daily Worship</h3>
+          <p>Daily congregational prayers are held at the masjid. Please refer to the current schedule for prayer and iqamah times.</p>
+          <a href="prayer-times.html">Prayer schedule</a>
+        </article>
+        <article class="card accent">
+          <h3>Programs</h3>
+          <p>Qur'an instruction, community gatherings, and educational programs support spiritual growth throughout the year.</p>
+          <a href="programs.html">Explore programs</a>
+        </article>
+        <article class="card accent">
+          <h3>Giving</h3>
+          <p>Support sadaqah, zakat, masjid operations, and special projects through online giving or donation boxes.</p>
+          <a href="donate.html">Donation options</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section two-col home-followup-section">
+      <div class="card">
+        <h2>Planning a Visit</h2>
+        <p>Primary parking is available in front of the building, with additional parking behind the building. Please avoid blocking neighboring businesses or their spaces.</p>
+        <a class="button primary" href="visit.html">Visitor Information</a>
+      </div>
+      <div class="callout">
+        <h2>Upcoming Updates</h2>
+        <p>Events, classes, Ramadan schedules, Eid prayer times, and special programs will be posted on the website and WhatsApp groupchat as details are announced.</p>
+        <a href="events.html">See events and activities</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <h3>Kent County Islamic Center</h3>
+        <p>Masjid Aisha, 430 Buttonwoods Ave, Warwick, RI 02886</p>
+        <p class="fine-print">Serving Warwick and the surrounding communities.</p>
+      </div>
+      <div>
+        <h3>Visit</h3>
+        <a href="prayer-times.html">Prayer Times</a>
+        <a href="visit.html">Address & Parking</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div>
+        <h3>Connect</h3>
+        <a href="programs.html">Programs</a>
+        <a href="events.html">Events</a>
+        <a href="donate.html">Donate</a>
+      </div>
+    </div>
+  </footer>
+  <script src="prayer-schedule.js"></script>
+  <script>
+    function homePrayerRow(prayer, activeName) {
+      const iqamah = prayer.iqamah || "-";
+      const sunrise = prayer.sunrise ? `<span>Sunrise: ${prayer.sunrise}</span>` : "";
+      const active = prayer.name === activeName ? "active-home-prayer-row" : "";
+      return `
+        <div class="home-prayer-row ${active}">
+          <strong>${prayer.name}</strong>
+          <span>Adhan: ${prayer.adhan}</span>
+          <span>Iqamah: ${iqamah}</span>
+          ${sunrise}
+        </div>
+      `;
+    }
+
+    function renderHomePrayerSchedule() {
+      const today = getTodayPrayerSchedule();
+      const title = document.getElementById("home-prayer-title");
+      const status = document.getElementById("home-prayer-status");
+      const rows = document.getElementById("home-prayer-rows");
+
+      if (!today) {
+        title.textContent = "Daily Prayer Times";
+        status.textContent = "Prayer schedule for this date is not available yet.";
+        rows.innerHTML = "";
+        return;
+      }
+
+      title.textContent = `July ${today.date}, 2026`;
+      status.textContent = "Today's Adhan and Iqamah times.";
+      const activeName = getActivePrayerName(today);
+      rows.innerHTML = getDisplayPrayers(today).map((prayer) => homePrayerRow(prayer, activeName)).join("");
+    }
+
+    renderHomePrayerSchedule();
+    window.setInterval(renderHomePrayerSchedule, 60000);
+    updateAtMidnight(renderHomePrayerSchedule);
+  </script>
+</body>
+</html>

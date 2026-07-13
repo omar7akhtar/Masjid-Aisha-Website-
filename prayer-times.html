@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prayer Times - Masjid Aisha</title>
+  <link rel="icon" type="image/jpeg" href="kcic-logo.jpg">
+  <link rel="apple-touch-icon" href="kcic-logo.jpg">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,7 +15,15 @@
       <input class="nav-toggle" id="nav-toggle" type="checkbox">
       <label class="menu-button" for="nav-toggle" aria-label="Open navigation"><span></span></label>
       <nav class="main-nav">
-        <a href="index.html">Home</a><a class="active" href="prayer-times.html">Prayer Times</a><a href="visit.html">Visit</a><a href="programs.html">Programs</a><a href="leadership.html">Leadership</a><a class="donate-link" href="donate.html">Donate</a><a href="events.html">Events</a><a href="ramadan-eid.html">Ramadan & Eid</a><a href="faq.html">FAQ</a>
+        <a href="index.html">Home</a>
+        <a class="active" href="prayer-times.html">Prayer Times</a>
+        <a class="donate-link" href="donate.html">Donate</a>
+        <a href="programs.html">Programs</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="visit.html">Visit</a>
+        <a href="events.html">Events</a>
+        <a href="ramadan-eid.html">Ramadan & Eid</a>
+        <a href="faq.html">FAQ</a>
       </nav>
     </div>
   </header>
@@ -28,16 +38,37 @@
           <div id="today-prayers" class="daily-prayer-list" aria-live="polite"></div>
           <p id="asr-note" class="schedule-note"></p>
         </div>
-      <div class="card">
-        <h2>Jumu'ah Prayer</h2>
-        <table class="info-table">
-          <tr><th>Day</th><td>Every Friday</td></tr>
-          <tr><th>Khutbah & Salah</th><td>Starting at 1:00 PM</td></tr>
-          <tr><th>Services</th><td>One Jumu'ah service currently offered</td></tr>
-        </table>
+      <div class="side-prayer-stack">
+        <div class="card">
+          <h2>Jumu'ah Prayer</h2>
+          <table class="info-table">
+            <tr><th>Day</th><td>Every Friday</td></tr>
+            <tr><th>Khutbah & Salah</th><td>Starting at 1:00 PM</td></tr>
+            <tr><th>Services</th><td>One Jumu'ah service currently offered</td></tr>
+          </table>
+        </div>
+        <div class="card download-schedule-card">
+          <span class="eyebrow">Monthly Schedule</span>
+          <h2>Download Monthly Schedule</h2>
+          <p>Download the updated July 2026 prayer schedule image.</p>
+          <a class="button primary download-button" href="monthly-schedule-july-2026.png" download>Download Schedule</a>
+        </div>
       </div>
       </div>
-
+      <div class="card schedule-programs-card">
+        <div class="section-header compact-header">
+          <span class="eyebrow">July Programs</span>
+          <h2>Programs & Monthly Notes</h2>
+        </div>
+        <div class="schedule-programs-grid">
+          <div><strong>Saturday Quran Class</strong><span>Saturday after Fajr, followed by light breakfast</span></div>
+          <div><strong>Sunday Quran Recitation</strong><span>After Fajr prayer</span></div>
+          <div><strong>Sunday Quran Reading Class</strong><span>After Zohar prayer with Br. Abdul Rahim</span></div>
+          <div><strong>Quran Classes for Beginners</strong><span>Sunday, Tuesday, and Thursday with Sheikh Zouheir</span></div>
+          <div><strong>Friday Prayer</strong><span>Lecture starts at 1:00 PM, followed by Arabic khutbah and prayer. Finish by 1:30 PM.</span></div>
+          <div><strong>Days of Voluntary Fasting</strong><span>White Days: 13th, 14th, and 15th of each lunar month</span></div>
+        </div>
+      </div>
     </section>
   </main>
   <footer class="site-footer"><div class="footer-inner"><div><h3>Kent County Islamic Center</h3><p>430 Buttonwoods Ave, Warwick, RI 02886</p></div><div><h3>Quick Links</h3><a href="visit.html">Visit</a><a href="donate.html">Donate</a></div><div><h3>Prayer</h3><a href="faq.html">FAQ</a><a href="ramadan-eid.html">Ramadan & Eid</a></div></div></footer>  <script src="prayer-schedule.js"></script>
@@ -86,6 +117,9 @@
   </script>
 </body>
 </html>
+
+
+
 
 
 

@@ -249,6 +249,27 @@ a {
   background: var(--white);
   color: var(--green-900);
 }
+.donate-pop {
+  position: relative;
+  isolation: isolate;
+  color: var(--green-950);
+  box-shadow: 0 16px 28px rgba(8, 37, 27, 0.28);
+}
+
+.donate-pop::after {
+  content: "";
+  position: absolute;
+  inset: 7px -8px -7px 8px;
+  border: 2px solid rgba(234, 216, 161, 0.72);
+  border-radius: 6px;
+  z-index: -1;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.donate-pop:hover::after {
+  transform: translate(2px, 2px);
+  opacity: 0.95;
+}
 
 .quick-strip {
   background: var(--white);
@@ -1146,3 +1167,64 @@ p {
 
 
 
+
+.schedule-programs-card {
+  margin-top: 24px;
+}
+
+.compact-header {
+  margin-bottom: 20px;
+}
+
+.schedule-programs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.schedule-programs-grid div {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbf9f1;
+}
+
+.schedule-programs-grid strong,
+.schedule-programs-grid span {
+  display: block;
+}
+
+.schedule-programs-grid strong {
+  color: var(--green-900);
+  margin-bottom: 4px;
+}
+
+.schedule-programs-grid span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+@media (max-width: 900px) {
+  .schedule-programs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.side-prayer-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.download-schedule-card {
+  border-top: 5px solid var(--gold);
+}
+
+.download-schedule-card p {
+  color: var(--muted);
+}
+
+.download-button {
+  width: 100%;
+  margin-top: 6px;
+}
